@@ -20,13 +20,13 @@ app.use((req, res, next) => {
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', apiRoutes);
 
-User.hasMany(Post);
+Post.belongsTo(Category);
 User.hasOne(Payment);
-Category.hasMany(Post);
 
 sequelize.sync().then(result => {
     // console.log(result);
 }).catch(err => console.error(err));
+
 const server = http.createServer(app);
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);

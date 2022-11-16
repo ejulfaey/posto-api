@@ -11,10 +11,13 @@ exports.addPost = async (req, res) => {
 
     const v = new Validator(req.body, {
         title: 'required',
-        detail: 'required'
+        body: 'required',
+        categoryId: 'required',
+        status: 'required',
+        label: 'required',
     }, {
         'title.required': 'title is required',
-        'detail.required': 'detail is required',
+        'body.required': 'detail is required',
     });
 
     const matched = await v.check();

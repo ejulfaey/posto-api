@@ -2,6 +2,12 @@ const Sequelize = require('sequelize');
 const sequelize = require('../util/database');
 
 const Payment = sequelize.define('payment', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true,
+    },
     paymentId: {
         type: Sequelize.STRING,
     },

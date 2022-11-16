@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const sequelize = require('../util/database');
 
 const Post = sequelize.define('post', {
-    postId: {
+    id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
@@ -38,10 +38,6 @@ const Post = sequelize.define('post', {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    userId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-    }
 });
 
 module.exports = Post;
